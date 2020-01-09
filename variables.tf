@@ -69,7 +69,7 @@ variable "mapPublicIP" {
 
 ### Vipnet Coordinator
 variable "vipami" {
-    default = "ami-01d073260941bd497"
+    default = "ami-090ebac1c8b35e011"
 }
 variable "vipcoordinator_type" {
     default = "t2.micro"

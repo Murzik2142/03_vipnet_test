@@ -17,3 +17,10 @@ resource "aws_instance" "VPC2_private_instance3" {
     Name = "tunnel-23-МММ"
   }
 }
+resource "aws_eip" "VPC2_private_instance3" {
+  instance = "${aws_instance.VPC2_private_instance3.id}"
+  vpc      = true
+  tags = {
+    Name = "VPC2_private_instance3"
+  }
+}
