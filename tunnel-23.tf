@@ -7,14 +7,16 @@ resource "aws_instance" "VPC2_private_instance3" {
   user_data = <<-EOF
 		#! /bin/bash
     sudo apt-get update
-		sudo apt-get install -y apache2 iperf3
+		sudo apt-get install -y apache2 iperf3 vsftpd dnsmasqd
 		sudo systemctl start apache2
 		sudo systemctl enable apache2
+    sudo systemctl start vsftpd
+		sudo systemctl enable vsftpd
 		echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
 	  EOF
 
   tags = {
-    Name = "tunnel-23-МММ"
+    Name = "tunnel-23-MMM"
   }
 }
 resource "aws_eip" "VPC2_private_instance3" {

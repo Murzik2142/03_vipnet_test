@@ -69,6 +69,12 @@ resource "aws_route" "VPC2_VPN_route" {
   instance_id             = aws_instance.vipnet_coordinator_VPC2.id
 }
 
+resource "aws_route" "VPC2_VPN_to_VPC1" {
+  route_table_id         = aws_route_table.VPC2_route_table.id
+  destination_cidr_block = "10.0.0.0/24"
+  instance_id             = aws_instance.vipnet_coordinator_VPC2.id
+}
+
 # Create the Internet Access
 resource "aws_route" "VPC2_internet_access" {
   route_table_id         = aws_route_table.VPC2_route_table.id

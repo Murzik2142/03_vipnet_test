@@ -6,6 +6,6 @@ resource "aws_instance" "VPC2_private_instance-win2" {
   instance_type   = "t2.micro"
 
   tags = {
-    Name = "Client-2-МММ"
+    Name = "Client-2-MMM"
   }
 }

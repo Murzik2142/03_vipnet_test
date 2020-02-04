@@ -7,16 +7,14 @@ resource "aws_instance" "VPC2_private_instance1" {
   user_data = <<-EOF
 		#! /bin/bash
     sudo apt-get update
-		sudo apt-get install -y apache2 iperf3
-		sudo systemctl start apache2
-		sudo systemctl enable apache2
-		echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
+		sudo apt-get install iperf3
 	  EOF
 
   tags = {
-    Name = "tunnel-21-МММ"
+    Name = "tunnel-21-MMM"
   }
 }
+/*
 resource "aws_eip" "VPC2_private_instance1" {
   instance = "${aws_instance.VPC2_private_instance1.id}"
   vpc      = true
@@ -24,3 +22,4 @@ resource "aws_eip" "VPC2_private_instance1" {
     Name = "VPC2_private_instance1"
   }
 }
+*/

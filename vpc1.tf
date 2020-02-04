@@ -60,6 +60,12 @@ resource "aws_route" "VPC1_VPN_route" {
   instance_id             = "${aws_instance.vipnet_coordinator_VPC1.id}"
 }
 
+resource "aws_route" "VPC1_VPN_to_VPC2" {
+  route_table_id         = aws_route_table.VPC1_route_table.id
+  destination_cidr_block = "10.0.1.0/24"
+  instance_id             = "${aws_instance.vipnet_coordinator_VPC1.id}"
+}
+
 resource "aws_route_table_association" "VPC1_association" {
   subnet_id      = aws_subnet.Public_VPC1_Subnet.id
   route_table_id = aws_route_table.VPC1_route_table.id
