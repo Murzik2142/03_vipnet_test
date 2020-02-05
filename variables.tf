@@ -69,7 +69,7 @@ variable "mapPublicIP" {
 
 ### Vipnet Coordinator
 variable "vipami" {
-    default = "ami-0f80acd58e1c9951a"
+    default = "ami-045a64d0d066d5624"
 }
 variable "vipcoordinator_type1" {
     default = "t3.micro"
@@ -77,8 +77,9 @@ variable "vipcoordinator_type1" {
 variable "vipcoordinator_type2" {
     default = "t3.micro"
 }
+#Warning WINDOWS
 variable "winami" {
-    default = "ami-00cdfecd6e5011ae7"
+    default = "ami-0cbf1b1038bbb408d"
 }
 
 variable "VPC1_init" {
